@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-# After deploying to Netlify and turning on Identity + Git Gateway (see DEPLOY.md),
+# After deploying to Netlify and turning on Identity + Git Gateway (see CARA-DEPLOY.md),
 # this panel will be reachable at https://your-site.netlify.app/admin/
 
 media_folder: "images/uploads"   # uploaded photos are saved straight into the site's own folder
@@ -17,12 +17,30 @@ collections:
         label: "All posts"
         file: "content/posts.json"
         fields:
-          - { label: "Posts", name: "posts", widget: "list", label_singular: "Post", summary: "{{title}} — {{date}}",
-              fields:
-                - { label: "Title", name: "title", widget: "string" }
-                - { label: "Slug (used in the URL, no spaces)", name: "slug", widget: "string", hint: "example: welcoming-the-hansen-family" }
-                - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
-                - { label: "Cover photo", name: "cover", widget: "image", required: false }
-                - { label: "Short summary (shown on the Stories page)", name: "excerpt", widget: "text" }
-                - { label: "Full story", name: "body", widget: "markdown" }
-            }
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            label_singular: "Post"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Slug (used in the URL, no spaces)"
+                name: "slug"
+                widget: "string"
+                hint: "example: welcoming-the-hansen-family"
+              - label: "Date"
+                name: "date"
+                widget: "datetime"
+                format: "YYYY-MM-DD"
+              - label: "Cover photo"
+                name: "cover"
+                widget: "image"
+                required: false
+              - label: "Short summary (shown on the Stories page)"
+                name: "excerpt"
+                widget: "text"
+              - label: "Full story"
+                name: "body"
+                widget: "markdown"
